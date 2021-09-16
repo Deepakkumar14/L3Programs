@@ -19,20 +19,8 @@ public class Logical {
                          initialList.remove(i);
                          i=-1;
                     }
-                     else{
-                         if(startTime>960 && startTime<=1020){
-                             String finalTime = timeFormat(startTime);
-                             String output1 = finalTime + "   " + "NetworkEvent";
-                             startTime = 540;
-                             finalEvent.add(output1);
-                             finalEvent.add("Track "+k);
-                             k++;
-                         }
-                     }
+            System.out.println(initialList.size());
         }
-
-        System.out.println(initialList.size());
-        System.out.println(rejected.size());
         return finalEvent;
     }
     public int calculateTime(String time){
@@ -79,13 +67,14 @@ public class Logical {
                 finalEvent.add(output);
                 return "false";
             }
-            if (startTime == 1020) {
+           else if(startTime>960 && startTime<=1020){
                 String finalTime = timeFormat(startTime);
-                String output = finalTime + "   " + "NetworkEvent";
+                String output1 = finalTime + "   " + "NetworkEvent";
                 startTime = 540;
-                finalEvent.add(output);
+                finalEvent.add(output1);
                 finalEvent.add("Track "+k);
                 k++;
+                return "false";
             }
         }
            return "false";
@@ -94,9 +83,31 @@ public class Logical {
 
 //7
 //        a 60min
-//        b lightning
-//        c 55min
-//        d 60min
-//        e 60min
-//        f 60min
+//        b 45min
+//        c 30min
+//        d 45min
+//        e 45min
+//        f lightning
 //        g 60min
+//         h 45min
+//      i 30min
+//      j 30min
+//      k 45min
+
+//18
+//        a 60min
+//        b 45min
+//        c 30min
+//        d 30min
+//        e 45min
+//        g 60min
+//        h 45min
+//        i 30min
+//        j 30min
+//        k 45min
+//        l 60min
+//        m 60min
+//        n 45min
+//        o 30min
+//        p 30min
+//        q 60min
